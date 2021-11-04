@@ -1,21 +1,21 @@
 public class StringManipulator {
 
     public static boolean isCorrectNumber(int number) {
-        return (number >= 1 && number <= 10); // проверка числа на корректность
+        return (number >= 1 && number <= 10); 
     }
 
     public static boolean isCorrectString(String string) {
-        return string.matches("^[a-zA-Z0-9. \\[\\]\\{\\}\\(\\)\\-!?:;\"\'#*^%]+$"); // проверка строки на корректность (только англ буквы)
+        return string.matches("^[a-zA-Z0-9. \\[\\]\\{\\}\\(\\)\\-!?:;\"\'#*^%]+$"); 
     }
 
     public static void cutString(String string) {
         if (string.length() > 40) {
-            String answer = string.substring(0, 40) + "..."; // если длина больше 40, то после 40-го символа поставить многоточие
+            String answer = string.substring(0, 40) + "..."; 
             System.out.print(answer);
         } else System.out.print(string);
     }
 
-    public static void addStrings(String firstString, String secondString) { // сложение строк
+    public static void addStrings(String firstString, String secondString) {
         System.out.print("\"");
         String answer = firstString + secondString;
         cutString(answer);
@@ -24,7 +24,7 @@ public class StringManipulator {
 
     public static void subtractStrings(String firstString, String secondString) {
         System.out.print("\"");
-        String answer = firstString.replaceAll(secondString, ""); // вычитание строк
+        String answer = firstString.replaceAll(secondString, ""); 
         cutString(answer);
         System.out.print("\"");
     }
@@ -33,7 +33,7 @@ public class StringManipulator {
         String result = "";
         System.out.print("\"");
         for (int i = 0; i < factor; i++) {
-            result += firstString; // умножение строки, то есть писать строку несколько раз
+            result += firstString; 
         }
         cutString(result);
         System.out.print("\"");
@@ -46,7 +46,7 @@ public class StringManipulator {
         } else {
             System.out.print("\"");
             for (int i = 0; i < string.length() / divider; i++) {
-                result += string.charAt(i); // вывести нужное кол-во символов урезанной строки
+                result += string.charAt(i); 
             }
             cutString(result);
             System.out.print("\"");
